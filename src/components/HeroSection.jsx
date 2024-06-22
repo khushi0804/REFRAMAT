@@ -1,16 +1,20 @@
-import React from "react";
+import React  from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "../styles/Button";
+import { useGlobalContext } from '../context';
 
 const HeroSection = () => {
-    return <Wrapper>
+  
+  const {name,image,para}= useGlobalContext();
+  // by this line the useContext getting the whole AppContext 
+    return (
+      <Wrapper>
+  
   <div className="container grid grid-two-column">
       <div className="section-hero-data">
-          <h1 className='hero-heading'>REFRAMAT ENTERPRISES</h1>
-          <p className="hero-para">REFRAMAT – Your Single Solution Serving Platter – for BEST IN CLASS – Refractories, Thermal Insulation, Premium Solutions for Conserving Energy!
-  We serve across industries including Iron & Steel, Cement, Power, Non Ferrous…. With premium solution offerings for industrial products including Refractories – Shaped (Bricks, Special Shaped) & Unshaped (Monolithics – Ramming Masses, Castables, Mortars), Thermal Insulation – Ceramic Fibre products (Ceramic Fibre Blankets, Boards, Papers, Textiles, Modules), Rockwool Products (Slabs, Wired Mat, Pipe Sections), Calcium Silicate – HYSIL (Blocks, Pipe Sections), Bio-soluble Products, Microporous Boards and Bulk product offerings (Ferro Alloys, Carbon products like CPC, Grahpite Granules, Metallics like Pig Iron, Sponge Iron)..
-  From serving the industrial setups thus far, we are pleased to shared endeavours to diversify now into speciality Household solutions supplies. Initial focus, apart from insulation and acoustic solutions, is aimed at Automation devices, which syncs with our ideology of supporting Energy conservation..</p>
+          <h1 className='hero-heading'>{name}</h1>
+          <p className="hero-para">{name},{para} </p>
   <Button className="btn hireme-btn">
           <NavLink to="/contact">Contact Us</NavLink>
       </Button>
@@ -19,16 +23,17 @@ const HeroSection = () => {
       {/* for image div this is second div that is used for image*/}
       <div className="section-hero-image">
         <picture>
-            <img src="./images/img1.avif" alt="image"  className="hero-img " />
+            <img src={image} alt="image"  className="hero-img " />
         </picture>
       </div>
   </div>
   
-    </Wrapper>;
+    </Wrapper>
+    );
   };
 
   const Wrapper = styled.section`
-  padding: 3.6rem 4rem;
+  padding: 6rem 4rem;
 
   .section-hero-data {
     display: flex;
@@ -65,8 +70,32 @@ const HeroSection = () => {
   }
 
   .hero-img {
-    max-width: 100%;
+    max-width: 110%;
+}
+
+
+
+     @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    .grid {
+      gap: 7.2rem;
+    }
+      .hero-heading{
+      font-size:6rem;
+      margin-bottom:1rem;
+      margin-top:-20px
+      
+      }
     
+      .hero-para{
+      font-size:1.3rem;
+      width:104%;
+      font-weight:800
+      }
+       .section-hero-image{
+       margin-top:-20px;
+       width:115%;
+       margin-left:-40px;
+       }
   }`;
 
 

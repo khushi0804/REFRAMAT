@@ -27,7 +27,15 @@ const Header = () => {
     height: auto;
     max-width: 45%;
     margin-left:5rem;
-  }`
+  }
+    @media (max-width:${({ theme }) => theme.media.tab}){
+    .logo{
+    width:220px;
+    margin-left:1rem}
+    padding:6rem 3rem;
+    }
+    `
+
   ;
 export default Header;
 
