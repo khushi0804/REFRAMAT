@@ -76,6 +76,7 @@ const HeroSection = () => {
 
 
      @media (max-width: ${({ theme }) => theme.media.mobile}) {
+   
     .grid {
       gap: 7.2rem;
     }

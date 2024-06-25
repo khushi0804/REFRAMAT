@@ -1,26 +1,22 @@
-import React from 'react'
-import Home from './Home'
-import About from './About'
-import Products from './Products'
-import Contact from './Contact'
+import React from "react";
+import Home from "./Home";
+import About from "./About";
+import Products from "./Products";
+import Contact from "./Contact";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { GlobalStyle } from "./GlobalStyle";
-import GoToTop from './components/GoToTop'
+import GoToTop from "./components/GoToTop";
+
+
 //A theme is a collection of values that define the look and feel of your application. This can include things like colors, fonts, and spacing. It uses the context API to make the theme available to all components in the tree, without having to pass it down manually through props.
 import { ThemeProvider } from "styled-components";
-import Error from './Error'
-
-
-
+import Error from "./Error";
 
 // here we are importing the navbar home page, about page, these are the routes of the pages
 
-
-
 const App = () => {
-
   const theme = {
     colors: {
       heading: "rgb(24 24 29)",
@@ -47,20 +43,21 @@ const App = () => {
       <GlobalStyle />
       <BrowserRouter>
         <Header />
+    
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/Products" element={<Products />} />
           <Route path="*" element={<Error />} />
-
-        </Routes>
+                </Routes>
         <GoToTop />
         <Footer />
       </BrowserRouter>
     </ThemeProvider>
   );
-}
-// these are the routes that are used to fetch the navbar and the data 
+};
+// these are the routes that are used to fetch the navbar and the data
 
-export default App
+export default App;

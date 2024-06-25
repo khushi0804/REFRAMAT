@@ -1,0 +1,21 @@
+.mainDiv{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:100px;
+    margin-left: 40px;
+    
+}
+.imgDiv{
+    width:340px;
+    height:250px;
+    /* object-fit: cover; */
+    background-size: cover;
+    background-position:  center;
+
+}
+.imgMainDiv{
+    border:2px solid black;
+border-top-right-radius: 40px;
+padding: 10px
+;}

@@ -8,6 +8,7 @@ box-sizing:border-box;
 font-family:"gilroy";
 }
 html{
+
 font-size:62.5%;
 overflow-x:hidden;
 }
@@ -120,6 +121,7 @@ h1{
 
    //998px
 @media (max-width:${({ theme }) => theme.media.tab}) {
+
       .container{
         padding:  3rem 2rem;
       }
