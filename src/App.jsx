@@ -1,13 +1,13 @@
 import React from "react";
 import Home from "./Home";
 import About from "./About";
-import Products from "./Products";
 import Contact from "./Contact";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { GlobalStyle } from "./GlobalStyle";
 import GoToTop from "./components/GoToTop";
+import PartnersWith from "./PartnersWith"
 
 
 //A theme is a collection of values that define the look and feel of your application. This can include things like colors, fonts, and spacing. It uses the context API to make the theme available to all components in the tree, without having to pass it down manually through props.
@@ -49,7 +49,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/Products" element={<Products />} />
+          <Route path="/partnerswith" element={<PartnersWith />} />
           <Route path="*" element={<Error />} />
                 </Routes>
         <GoToTop />

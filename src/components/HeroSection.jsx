@@ -23,7 +23,7 @@ const HeroSection = () => {
       {/* for image div this is second div that is used for image*/}
       <div className="section-hero-image">
         <picture>
-            <img src={image} alt="image"  className="hero-img " />
+            <img src={image} alt="image"  className="hero-img" />
         </picture>
       </div>
   </div>
@@ -35,10 +35,12 @@ const HeroSection = () => {
   const Wrapper = styled.section`
   padding: 6rem 4rem;
 
+
   .section-hero-data {
     display: flex;
     flex-direction: column;
     justify-content: center;
+  
   }
 
   .btn {
@@ -47,7 +49,7 @@ const HeroSection = () => {
 
   .hero-heading {
     text-transform: uppercase;
-    font-size: 4rem;
+    font-size: 4.2rem;
     color:#2565AF;
   }
 
@@ -55,7 +57,9 @@ const HeroSection = () => {
     margin-top: 1rem;
     margin-bottom: 2.7rem;
     max-width: 70rem;
-        font-size: 1.35rem;
+        font-size: 1.36rem;
+        font-weight:700;
+        color:black;
 
   }
 
@@ -70,7 +74,9 @@ const HeroSection = () => {
   }
 
   .hero-img {
-    max-width: 110%;
+    max-width: 120%;
+    margin-left:-20px;
+    border-radius:20px;
 }
 
 
@@ -88,14 +94,13 @@ const HeroSection = () => {
       }
     
       .hero-para{
-      font-size:1.3rem;
+      font-size:1.5rem;
       width:104%;
       font-weight:800
       }
        .section-hero-image{
-       margin-top:-20px;
-       width:115%;
-       margin-left:-40px;
+       width:100%;
+       margin-bottom:-50px
        }
   }`;
 

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import HeroSection from "./components/HeroSection";
 import { useGlobalContext } from "./context";
-import Products from "./Products"
+import Products from "./PartnersWith"
 import Contact from "./Contact";
 
 const Home = () => {

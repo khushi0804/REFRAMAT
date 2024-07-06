@@ -1,6 +1,6 @@
 import React from "react";
 import { useGlobalContext } from "./context";
-import { data,dass} from "./data/data";
+import { data} from "./data/data";
 import ProductCss from "./styles/Product.module.css";
 
 const Products = () => {
@@ -9,7 +9,7 @@ const Products = () => {
   return (
     
     <div>
-      <h1>OUR DISTRIBUTING PARTNERS</h1>
+      <h1 className={ProductCss.headings}>OUR DISTRIBUTING PARTNERS</h1>
       
       <div className={ProductCss.mainDiv}>
       

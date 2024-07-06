@@ -16,7 +16,7 @@ const Footer = () => {
           </div>
           <div>
             <NavLink to="/">
-              <Button>Get started</Button>
+              <Button className='btno'>Get started</Button>
             </NavLink>
           </div>
         </div>
@@ -41,7 +41,7 @@ const Footer = () => {
                 autoComplete="off"
                 placeholder="Email"
               />
-              <input type="submit" value="Subscribe" />
+              <input  className="btne" type="submit" value="Subscribe" />
             </form>
           </div>
 
@@ -84,12 +84,12 @@ const Footer = () => {
           <div className="footer-bottom--section">
           <hr />
           <div className="container grid grid-two-column">
-            <p>
+            <p className='hope'>
               @{new Date().getFullYear()} REFRAMAT ENTERPRISES. All Rights Reserved
             </p>
             <div>
-              <p>PRIVACY POLICY</p>
-              <p>TERMS & CONDITIONS</p>
+              <p className='hope' >PRIVACY POLICY</p>
+              <p className='hope'>TERMS & CONDITIONS</p>
             </div>
           </div>
           </div>
@@ -98,6 +98,26 @@ const Footer = () => {
   );
 };
 const Wrapper = styled.section`
+.hope{
+font-weight:800;
+color:white;
+cursor:pointer;
+}
+.btno:hover{
+color:#2565AF;
+}
+.btne{
+background-color:#C7A532;
+color:white;
+border-radius:12px;
+font-weight:600
+}
+.btne:hover{
+color:red;
+background-color:white;
+    transform: scale(0.96);
+
+}
 .contact-short {
     max-width: 60vw;
     margin: auto;
@@ -114,40 +134,49 @@ const Wrapper = styled.section`
 
   footer {
     padding: 14rem 0 9rem 0;
-    background-color: ${({ theme }) => theme.colors.footer_bg};
+    background-color:#2565AF;
 
     h3 {
       color: ${({ theme }) => theme.colors.hr};
       margin-bottom: 2.4rem;
+      font-weight:700
     }
     p {
       color: ${({ theme }) => theme.colors.white};
+      font-weight:700;
+
     }
     .footer-social--icons {
       display: flex;
       gap: 2rem;
+      
 
       div {
         padding: 1rem;
         border-radius: 50%;
         border: 2px solid ${({ theme }) => theme.colors.white};
+        
 
         .icons {
           color: ${({ theme }) => theme.colors.white};
           font-size: 2.4rem;
           position: relative;
           cursor: pointer;
+                font-weight:700
+
         }
       }
     }
 
     .footer-bottom--section {
       padding-top: 9rem;
+      
 
       hr {
         margin-bottom: 2rem;
         color: ${({ theme }) => theme.colors.hr};
-        height: 0.1px;
+        height: 3px;
+        font-weight:900
       }
     }
   }
