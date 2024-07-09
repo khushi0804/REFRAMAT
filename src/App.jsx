@@ -7,9 +7,12 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { GlobalStyle } from "./GlobalStyle";
 import GoToTop from "./components/GoToTop";
-import PartnersWith from "./PartnersWith"
-
-
+import Products from "./Products";
+import { AppProvider } from "./context";
+import PartnersWith from "./PartnersWith";
+// import Partner1 from "./PartnerDetails/Partner1";
+// import Partner2 from "./PartnerDetails/Partner2";
+import Partnerdetails from "./Partnerdetails/Partnerdetails"
 //A theme is a collection of values that define the look and feel of your application. This can include things like colors, fonts, and spacing. It uses the context API to make the theme available to all components in the tree, without having to pass it down manually through props.
 import { ThemeProvider } from "styled-components";
 import Error from "./Error";
@@ -40,21 +43,27 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
+      <AppProvider>
       <GlobalStyle />
       <BrowserRouter>
         <Header />
-    
 
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/Products" element={<Products />} />
           <Route path="/partnerswith" element={<PartnersWith />} />
+          {/* <Route path="/PartnerDetails/partner1" element={<Partner1 />} />
+          <Route path="/PartnerDetails/partner2" element={<Partner2 />} /> */}
+          <Route path="/partnerdetails/:id" element={<Partnerdetails />} />
+
           <Route path="*" element={<Error />} />
-                </Routes>
+        </Routes>
         <GoToTop />
         <Footer />
       </BrowserRouter>
+    </AppProvider>
     </ThemeProvider>
   );
 };

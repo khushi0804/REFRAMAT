@@ -3,28 +3,30 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { CgMenu, CgCloseR } from "react-icons/cg";
 import Dropdown from "./Dropdown/Dropdown";
+import {data} from "../data/data"
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
-
-  const partnersWithItems = [
-    { name: "Carborundum Universal Limited", path: "/partnerswith/partner1" },
-    { name: "HYSIL", path: "/partnerswith/partner2" },
-    {
-      name: "MURUGAPPA MORGAN ADVANCED MATERIALS",
-      path: "/partnerswith/partner3",
-    },
-    { name: "BOHLERWELDING BY VOESTALPINE", path: "/partnerswith/partner4" },
-    { name: "HOGANAS", path: "/partnerswith/partner5" },
-    {
-      name: "ROCKWOOL ROXUL ROCKWOOL TECHNICAL INSULATION INDIA (P) LTD",
-      path: "/partnerswith/partner6",
-    },
-    { name: "DALMIA MAGNESITE CORPORATION", path: "/partnerswith/partner7" },
-  ];
+  const partnersWithItems = data;
+  // const partnersWithItems = [
+  //   { name: "Carborundum Universal Limited", path: "/partnerswith/partner1" },
+  //   { name: "HYSIL", path: "/partnerswith/partner2" },
+  //   {
+  //     name: "MURUGAPPA MORGAN ADVANCED MATERIALS",
+  //     path: "/partnerswith/partner3",
+  //   },
+  //   { name: "BOHLERWELDING BY VOESTALPINE", path: "/partnerswith/partner4" },
+  //   { name: "HOGANAS", path: "/partnerswith/partner5" },
+  //   {
+  //     name: "ROCKWOOL ROXUL ROCKWOOL TECHNICAL INSULATION INDIA (P) LTD",
+  //     path: "/partnerswith/partner6",
+  //   },
+  //   { name: "DALMIA MAGNESITE CORPORATION", path: "/partnerswith/partner7" },
+  // ];
   const Nav = styled.nav`
     .navbar-list {
       display: flex;
       gap: 8rem;
+
 
       li {
         list-style: none;
@@ -40,6 +42,8 @@ const Navbar = () => {
             color: black;
             font-weight: 700;
             transition: all ease 0.5s;
+            z-index:99;
+            position:relative;
           }
 
           &:hover,
@@ -125,6 +129,7 @@ const Navbar = () => {
         transform: translateX(0);
         z-index: 999;
       }
+     
     }
   `;
   return (

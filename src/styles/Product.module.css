@@ -11,20 +11,20 @@
 
 .imgDiv {
     width: 220px;
-    height: 220px;
+    height: 210px;
     /* object-fit: cover; */
     background-size: cover;
     background-position: center;
     background-position: center;
     background-size: cover;
-    background-color: rgb(232, 229, 230);
+    /* background-color: rgb(232, 229, 230); */
     padding:20px;
     border-radius: 10px;
     transition: all ease 0.5s;
 
 }
 .imgDiv:hover{
-    transform: scale(1.25); 
+    transform: scale(1.35); 
     cursor: pointer;
 
 }

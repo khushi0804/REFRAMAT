@@ -51,15 +51,18 @@ const HeroSection = () => {
     text-transform: uppercase;
     font-size: 4.2rem;
     color:#2565AF;
+          text-align:left;
+
   }
 
   .hero-para {
     margin-top: 1rem;
-    margin-bottom: 2.7rem;
+    margin-bottom: 3.7rem;
     max-width: 70rem;
         font-size: 1.36rem;
         font-weight:700;
         color:black;
+      text-align:left
 
   }
 

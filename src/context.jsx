@@ -2,21 +2,43 @@
 //povider
 //cosumer
 // ware house transfers the provider to consumer here we use API context with hooks
-import React, { useContext, useEffect, useReducer } from "react";
+import React, { useContext, useEffect, useReducer,useState,createContext } from "react";
 import reducer from "./reducer"
 // import { Children } from "react";
-
+const AppContexts = createContext();
 const AppContext = React.createContext();
 // by this line we are creating a warehouse context for the provider and the consumer.
 
 
-const API = "https://thapareactapi.up.railway.app/";
+// const API = "https://thapareactapi.up.railway.app/";
 const intialState ={
     name:"",
     image:"",
     para:"",
     products:[],
+    partners:[],
+    loading: true,
 };
+
+
+const AppProviders = ({ children }) => {
+  const [partners, setPartners] = useState([]);
+
+  useEffect(() => {
+      fetch('http://localhost:5000/api/partners')
+          .then((response) => response.json())
+          .then((data) => setPartners(data))
+          .catch((error) => console.error('Error fetching partners:', error));
+  }, []);
+  return (
+    <AppContext.Provider value={{ partners }}>
+        {children}
+    </AppContext.Provider>
+);
+}
+
+
+
 
 const AppProvider = ({ children }) => {
 
@@ -58,7 +80,7 @@ console.log(error)
 
     //   to call the API for products page
     useEffect(()=>{
-      getProducts(API);
+      getProducts();
     },[])
 
     // here we are creating the reducer hook for the API's use reducer hook
@@ -73,4 +95,4 @@ console.log(error)
 const useGlobalContext=()=>{
     return useContext(AppContext);
 }
-export {AppContext, AppProvider, useGlobalContext}
+export {AppContext, AppProvider, useGlobalContext,AppProviders,AppContexts}

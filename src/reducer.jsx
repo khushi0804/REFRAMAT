@@ -24,7 +24,19 @@ const reducer = (state, action) => {
       Products: action.payload,
     };
   }
-  
+ if("GET_PARTNERS"){
+    return {
+        ...state,
+        partners: action.payload,
+    };
+ }
+
+ if("SET_LOADING"){
+  return {
+      ...state,
+      loading: action.payload,
+  };
+}
  
     return state;
   };

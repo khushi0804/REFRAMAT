@@ -23,6 +23,7 @@ const Header = () => {
   justify-content: space-between;
   align-items: center;
 
+
   .logo {
     height: auto;
     max-width: 42%;

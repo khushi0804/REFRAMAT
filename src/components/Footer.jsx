@@ -126,6 +126,7 @@ background-color:white;
     border-radius: 1rem;
     box-shadow: ${({ theme }) => theme.colors.shadowSupport};
     transform: translateY(50%);
+  
   }
   .contact-short-btn {
     justify-self: end;

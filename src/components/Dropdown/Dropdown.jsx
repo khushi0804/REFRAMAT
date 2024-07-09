@@ -5,10 +5,10 @@ import './Dropdown.css';
 const Dropdown = ({ items }) => {
   return (
     <ul className="dropdown-menu">
-      {items.map((item, index) => (
-        <li key={index} className="dropdown-item">
+      {items.map((item) => (
+        <li key={item.id} className="dropdown-item">
           <NavLink className="dropdown-link" to={item.path}>
-            {item.name}
+            {item.title}
           </NavLink>
         </li>
       ))}
