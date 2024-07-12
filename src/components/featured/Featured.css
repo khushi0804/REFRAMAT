@@ -1,0 +1,56 @@
+.featured{
+ flex:2;
+ -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+ box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+ padding: 10px;   
+}
+.titled{
+    font-size: 16px;
+    font-weight: 600;
+    color:rgb(92, 91, 91)
+
+}
+.morevert{
+font-size:20px !important;
+}
+.top{
+    display:flex;
+    align-items: center;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    color:gray
+}
+.bottom{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 2px;
+    
+
+
+}
+.featuredChart{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width:130px;
+    height:90px;
+
+}
+.sales{
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: -10px;
+}
+.amount{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: -10px;
+}
+.desc{
+    font-size: 12px;
+    font-weight: 600;
+}

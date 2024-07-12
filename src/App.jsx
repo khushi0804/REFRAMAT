@@ -10,11 +10,13 @@ import GoToTop from "./components/GoToTop";
 import Products from "./Products";
 import { AppProvider } from "./context";
 import PartnersWith from "./PartnersWith";
-// import Partner1 from "./PartnerDetails/Partner1";
+// import Partner1 from "./Partnerdetails/Partner1";
 // import Partner2 from "./PartnerDetails/Partner2";
-import Partnerdetails from "./Partnerdetails/Partnerdetails"
+import Login from "./components/Login";
+import Partnerdetails from "./Partnerdetails/Partnerdetails";
 //A theme is a collection of values that define the look and feel of your application. This can include things like colors, fonts, and spacing. It uses the context API to make the theme available to all components in the tree, without having to pass it down manually through props.
 import { ThemeProvider } from "styled-components";
+import Dashboard from "./Dashboard/Dashboard";
 import Error from "./Error";
 
 // here we are importing the navbar home page, about page, these are the routes of the pages
@@ -44,26 +46,94 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <AppProvider>
-      <GlobalStyle />
-      <BrowserRouter>
-        <Header />
+        <GlobalStyle />
+        <BrowserRouter>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <Header />
+                  <Home />
+                  <Footer />
+                </>
+              }
+            />
+            <Route
+              path="/about"
+              element={
+                <>
+                  <Header />
+                  <About />
+                  <Footer />
+                </>
+              }
+            />
+            <Route
+              path="/contact"
+              element={
+                <>
+                  <Header />
+                  <Contact />
+                  <Footer />
+                </>
+              }
+            />
+            <Route
+              path="/Products"
+              element={
+                <>
+                  <Header />
+                  <Products />
+                  <Footer />
+                </>
+              }
+            />
+            <Route
+              path="/partnerswith"
+              element={
+                <>
+                  <Header />
+                  <PartnersWith />
+                  <Footer />
+                </>
+              }
+            />
+            {/* <Route path="/Partnerdetails/partner1" element={<Partner1 />} /> */}
+            {/* <Route path="/PartnerDetails/partner2" element={<Partner2 />} /> */}
+            <Route
+              path="/partnerdetails/:id"
+              element={
+                <>
+                  <Header />
+                  <Partnerdetails />
+                  <Footer />
+                </>
+              }
+            />
+            <Route
+              path="/adminlogin"
+              element={
+                <>
+                  <Header />
+                  <Login />
+                </>
+              }
+            />
+            <Route
+              path="/dashboard"
+              element={
+                <>
+                  <Dashboard />
+                </>
+              }
+            />
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/Products" element={<Products />} />
-          <Route path="/partnerswith" element={<PartnersWith />} />
-          {/* <Route path="/PartnerDetails/partner1" element={<Partner1 />} />
-          <Route path="/PartnerDetails/partner2" element={<Partner2 />} /> */}
-          <Route path="/partnerdetails/:id" element={<Partnerdetails />} />
-
-          <Route path="*" element={<Error />} />
-        </Routes>
-        <GoToTop />
-        <Footer />
-      </BrowserRouter>
-    </AppProvider>
+            <Route path="*" element={<Error />} />
+          </Routes>
+          <GoToTop />
+        </BrowserRouter>
+      </AppProvider>
     </ThemeProvider>
   );
 };

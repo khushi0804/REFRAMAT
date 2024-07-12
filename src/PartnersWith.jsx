@@ -68,24 +68,24 @@ import { NavLink } from "react-router-dom";
 import ProductCss from "./styles/Product.module.css";
 
 const PartnersWith = () => {
-    const { partners } = useGlobalContext();
-    return (
-        <div>
-            <h1 className={ProductCss.headings}>OUR DISTRIBUTING PARTNERS</h1>
-            <div className={ProductCss.mainDiv}>
-                {partners.map((partner) => (
-                    <div key={partner.id} className={ProductCss.imgMainDiv}>
-                        <NavLink to={`/partnerdetails/${partner.id}`}>
-                            <img
-                                className={ProductCss.imgDiv}
-                                src={partner.image}
-                                alt={partner.name}
-                            />
-                        </NavLink>
-                        <p>{partner.name}</p>
-                    </div>
-                ))}
-{/* 
+  const { partners } = useGlobalContext();
+  return (
+    <div>
+      <h1 className={ProductCss.headings}>OUR DISTRIBUTING PARTNERS</h1>
+      <div className={ProductCss.mainDiv}>
+        {partners.map((partner) => (
+          <div key={partner.id} className={ProductCss.imgMainDiv}>
+            <NavLink to={`/partnerdetails/${partner.id}`}>
+              <img
+                className={ProductCss.imgDiv}
+                src={partner.image}
+                alt={partner.name}
+              />
+            </NavLink>
+            <p>{partner.name}</p>
+          </div>
+        ))}
+        {/* 
         {data.map((item) => {
           return (
             <div key={item.id} className={ProductCss.imgMainDiv}>
@@ -97,10 +97,9 @@ const PartnersWith = () => {
             </div>
           );
         })} */}
-            </div>
-            
-        </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default PartnersWith;
