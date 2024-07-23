@@ -1,0 +1,11 @@
+.container {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .image {
+    max-width: 100%;
+    height: auto;
+    margin: 1rem 0;
+  }
+  

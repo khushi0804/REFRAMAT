@@ -19,6 +19,7 @@ import { ThemeProvider } from "styled-components";
 import Dashboard from "./Dashboard/Dashboard";
 import Error from "./Error";
 
+
 // here we are importing the navbar home page, about page, these are the routes of the pages
 
 const App = () => {

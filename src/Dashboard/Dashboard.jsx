@@ -1,4 +1,4 @@
-import React from "react";
+import { React } from "react";
 import "./Dashboard.css";
 import Sidebar from "../components/Sidebar/Sidebar";
 import Navbardash from "../components/Navbar/Navbardash";

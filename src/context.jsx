@@ -31,8 +31,11 @@ const AppProviders = ({ children }) => {
   useEffect(() => {
     fetch("http://localhost:5000/api/partners")
       .then((response) => response.json())
-      .then((data) => setPartners(data))
+      .then((data) => setPartners(response))
       .catch((error) => console.error("Error fetching partners:", error));
+      console.log(response,'response')
+      console.log(data,'data')
+
   }, []);
   return (
     <AppContext.Provider value={{ partners }}>{children}</AppContext.Provider>

@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { CgMenu, CgCloseR } from "react-icons/cg";
 import Dropdown from "./Dropdown/Dropdown";
-import {data} from "../data/data"
+import {data} from "../data/data.js"
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const partnersWithItems = data;
